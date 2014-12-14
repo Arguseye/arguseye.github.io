@@ -58,7 +58,11 @@ markdown: redcarpet
 pygments: true
 pygments_options: ['lineanchors', 'linenos=table']
 highlighter: true
-```    
+```
+
+{% gist 01d30d114ae00ec03449 %}
+
+
 ## 3.2 公式的支持
 
 blog如果出现数学公式可以考虑使用[Mathjax](<script src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>)，或者使用LaTeX来实现.我使用的是Mathjax。
