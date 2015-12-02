@@ -5,7 +5,7 @@ date:   2014-12-07 20:51:22
 categories: jekyll 
 ---
 
-# Windows环境下，jekyllrb的搭建：
+# Windows环境下，jekyllrb的搭建111：
 
 jekyll是一个简单的、以博客内容为中心的静态网站生成工具。它能够将markdown格式文件转换成静态网页，让我们专注于博客的编写。与此同时，jekyll又是github的文本解析引擎，我们通过建立jekyll工程就能完成一个Github Pages了，是不是很酷呢？让我们先建立一个jekyll吧！
 
