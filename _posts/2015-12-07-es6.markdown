@@ -1,0 +1,113 @@
+---
+layout: default
+title:  "es2015 study"
+date:   2014-12-07 22:33:22
+categories: blog 
+---
+
+# ES6
+
+### 什么是ES6
+
+开始想仔细介绍什么是es6，就到网上查了下『什么是es6』，结果没有查到，想想也对，es == escascript，是一种标准，目前是第5个版本，es6(es2015)
+
+### 为什么要学习ES6
+
+因为工作需要嘛！这个确实是起初的原因。开始找工作的时候，面试官就问我，
+
++ 最近有了解前端技术吗？ 不是很多
++ 有了解es6吗？ 我说没有
++ 有了解babel吗？ 我说没有
++ 有了解webpack吗？ 我说没有
++ 有了解react吗？ 我说没有
+
+看来我开始的回答还很诚实，2015年出现了这么多前端技术，我竟然一个都不了解。
+
+### 为什么不学习下ES6
+
+#### Classes
+
+es6提供了Class概念，但是依然遵循prototype继承。但提供extends、super和static等方法。
+
+#### Destructuring
+
+解构赋值，提供：
+
+```js
+
+    var [a, b, c] = [1, 2, 3];
+    console.log(a); // 1
+    
+    var [d] = [];
+    console.log(d); // undefined
+    
+    var [a = 1] = [];
+    console.log(a); // 1
+```
+
+#### 默认值和...
+
+es6提供了函数的默认值和三个点操作，这个很复合ruby的写法
+
+```js
+
+    console.log(...[1, 2, 3]); 1 2 3
+    
+    function myFunc(x, ...y) {
+        return x * y.length;
+    }
+    myFunc(3, "hello", true);
+
+```
+
+#### let 修改变量作用域
+
+```js
+    if(true){
+        let x = 1;
+        console.log(x);
+    }
+    console.log(x);
+```
+
+#### 模块加载
+
+```js
+
+    // lib/math.js
+    export function sum(x, y) {
+      return x + y;
+    }
+    export var pi = 3.141593;
+    
+    // app.js
+    import * as math from "lib/math";
+    alert("2π = " + math.sum(math.pi, math.pi));
+
+```
+
+#### Promises
+
+```js
+
+    function timeout(duration = 0) {
+        return new Promise((resolve, reject) => {
+            setTimeout(resolve, duration);
+        })
+    }
+    
+    var p = timeout(1000).then(() => {
+        return timeout(2000);
+    }).then(() => {
+        throw new Error("hmm");
+    }).catch(err => {
+        return Promise.all([timeout(100), timeout(200)]);
+    })
+
+```
+
+参考：
+
++ [es6的兼容表](http://kangax.github.io/compat-table/es6)
++ [es6海外版](https://github.com/lukehoban/es6features#module-loaders)
++ [es6阮一峰版](http://es6.ruanyifeng.com/)
